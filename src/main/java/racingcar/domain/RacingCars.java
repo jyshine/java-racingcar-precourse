@@ -5,17 +5,16 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RacingCars {
-    List<Car> carList = new ArrayList<>();
+    private final List<Car> carList = new ArrayList<>();
 
-
-    public void createCar(String inputValue) {
+    public RacingCars(String inputValue) {
         String[] splitInputValue = inputValue.split(",");
         for (String splitValue : splitInputValue) {
             validationCarName(splitValue);
             carList.add(new Car(splitValue));
         }
-
     }
+
 
     private void validationCarName(String carName) {
 //        TODO: 공백을 카운트로 셀 것인지 확인 및 추가 작업 필요
@@ -26,5 +25,7 @@ public class RacingCars {
         }
     }
 
-
+    public List<Car> getCarList() {
+        return carList;
+    }
 }
