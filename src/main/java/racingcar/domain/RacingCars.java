@@ -25,4 +25,6 @@ public class RacingCars {
             throw new IllegalArgumentException("[ERROR] 경주할 자동차 이름은 5자 이내로 설정할 수 있습니다.");
         }
     }
+
+
 }
