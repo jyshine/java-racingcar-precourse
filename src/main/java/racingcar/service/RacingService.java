@@ -1,18 +1,21 @@
 package racingcar.service;
 
-public class RacingService {
+import racingcar.domain.Car;
+import racingcar.domain.RacingCars;
+import racingcar.util.RandomNumber;
 
-    public Integer forward(int randomeValue) {
-        // TODO 하드코딩 변경
-        int count = 0;
-        if (isForward(randomeValue)) {
-            count = 1;
+public class RacingService {
+    private final RacingCars racingCars = new RacingCars();
+    private final RandomNumber randomNumber = new RandomNumber();
+
+    public void roundOne(String inputValue) {
+        racingCars.createCar(inputValue);
+        for (Car car : racingCars.getCarList()) {
+            car.setPosition(racingCars.forward(randomNumber.getNumber()));
         }
-        return count;
     }
 
-    private boolean isForward(int randomeValue) {
-        // TODO 하드코딩 변경
-        return randomeValue >= 4;
+    public RacingCars getRacingCars() {
+        return racingCars;
     }
 }

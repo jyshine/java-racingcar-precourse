@@ -5,19 +5,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-
+import racingcar.domain.RacingCars;
 
 class RacingServiceTest {
 
     @ParameterizedTest
-    @CsvSource(value = {"0,0", "1,0", "2,0", "3,0", "4,1", "5,1", "6,1", "7,1", "8,1", "9,1"})
-    void 자동차_입력_값이_4이상이면_전진(int randomValue, int forwardCount) {
+    @CsvSource(value = {"0,a", "1,b", "2,c", "3,d"})
+    void 라운드_원(int index, String carName) {
         // given
+        String inputValue = "a,b,c,d";
         RacingService racingService = new RacingService();
         // when
-        int forward = racingService.forward(randomValue);
+        racingService.roundOne(inputValue);
+        RacingCars racingCars = racingService.getRacingCars();
         // then
-        assertEquals(forward, forwardCount);
+        assertEquals(racingCars.getCarList().get(index).getName(), carName);
 
     }
 

@@ -9,7 +9,7 @@ public class Car {
     }
 
     public void setPosition(int position) {
-        this.position = position;
+        this.position = this.position + position;
     }
 
     public String getName() {
