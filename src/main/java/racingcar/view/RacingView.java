@@ -1,6 +1,9 @@
 package racingcar.view;
 
 import static racingcar.util.Constans.CAR_ROUND_RESULT_DELIMITER;
+import static racingcar.util.Messages.INPUT_CAR_NAMES;
+import static racingcar.util.Messages.INPUT_RACING_ROUND;
+import static racingcar.util.Messages.OUTPUT_RACING_WINNER;
 
 import java.util.ArrayList;
 import racingcar.domain.Car;
@@ -24,16 +27,16 @@ public class RacingView {
     }
 
     public String printInputCarName() {
-        System.out.println("경주 할 자동차 이름(이름은 쉼표(,) 기준으로 구분)");
+        System.out.println(INPUT_CAR_NAMES);
         return Console.readLine();
     }
 
     public String printInputRound() {
-        System.out.println("시도할 회수");
+        System.out.println(INPUT_RACING_ROUND);
         return Console.readLine();
     }
 
     public void printOutWinnerCars(ArrayList<String> winnerCars) {
-        System.out.println("최종 우승자: "+String.join(", ",winnerCars));
+        System.out.println(OUTPUT_RACING_WINNER+String.join(", ",winnerCars));
     }
 }
