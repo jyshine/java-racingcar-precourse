@@ -17,10 +17,9 @@ public class RacingController {
         String validName = setRacingCars();
         racingService.init(validName);
 
-        String inputRound = setRacingRound();
-        int count = Integer.parseInt(inputRound);
+        int inputRound = setRacingRound();
 
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < inputRound; i++) {
             racingService.round();
             racingView.printRacingResult(racingService.getRacingCars());
         }
@@ -31,11 +30,11 @@ public class RacingController {
         racingView.printOutWinnerCars(winner.getWinnerCars());
     }
 
-    private String setRacingRound() {
+    private int setRacingRound() {
         try {
             String inputRacingRound = racingView.printInputRound();
             validation.validationRound(inputRacingRound);
-            return inputRacingRound;
+            return Integer.parseInt(inputRacingRound);
         } catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
             return setRacingRound();
