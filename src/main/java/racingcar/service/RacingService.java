@@ -14,15 +14,12 @@ public class RacingService {
         }
     }
 
-    public void start(String inputValue) {
+    public void init(String inputValue) {
         racingCars.createCar(inputValue);
-        int count = Integer.parseInt(inputValue);
-        for (int i = 0; i < count; i++) {
-            round();
-        }
     }
 
     public RacingCars getRacingCars() {
         return racingCars;
     }
+
 }

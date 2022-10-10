@@ -31,15 +31,4 @@ class RacingServiceTest {
 
     }
 
-    @ParameterizedTest
-    @CsvSource(value = {"0,a", "1,b", "2,c", "3,d"})
-    void 입력_수만큼_반복(int index, String carName) {
-        // given
-        String inputCount = "3";
-        // when
-        racingService.start(inputCount);
-        // then
-        assertEquals(racingService.getRacingCars().getCarList().get(index).getName(), carName);
-    }
-
 }
