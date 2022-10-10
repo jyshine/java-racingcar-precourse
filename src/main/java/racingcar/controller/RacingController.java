@@ -10,12 +10,11 @@ public class RacingController {
     Winner winner = new Winner();
 
     public void startRacingGame() {
-        racingView.printInputCarName();
+        String inputCarName = racingView.printInputCarName();
+        racingService.init(inputCarName);
+        String inputRound = racingView.printInputRound();
 
-        racingService.init("a,b,c,d,e");
-        racingView.printInputRound();
-
-        int count = Integer.parseInt("10");
+        int count = Integer.parseInt(inputRound);
 
         for (int i = 0; i < count; i++) {
             racingService.round();

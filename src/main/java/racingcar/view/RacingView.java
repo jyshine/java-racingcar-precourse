@@ -3,6 +3,7 @@ package racingcar.view;
 import java.util.ArrayList;
 import racingcar.domain.Car;
 import racingcar.domain.RacingCars;
+import camp.nextstep.edu.missionutils.Console;
 
 public class RacingView {
     public void printRacingResult(RacingCars racingCars) {
@@ -20,12 +21,14 @@ public class RacingView {
         return stringBuilder.toString();
     }
 
-    public void printInputCarName() {
+    public String printInputCarName() {
         System.out.println("경주 할 자동차 이름(이름은 쉼표(,) 기준으로 구분)");
+        return Console.readLine();
     }
 
-    public void printInputRound() {
+    public String printInputRound() {
         System.out.println("시도할 회수");
+        return Console.readLine();
     }
 
     public void printOutWinnerCars(ArrayList<String> winnerCars) {
