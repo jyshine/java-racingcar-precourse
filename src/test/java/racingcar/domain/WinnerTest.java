@@ -26,7 +26,7 @@ class WinnerTest {
         d.setPosition(7);
         racingService.getRacingCars().getCarList().add(d);
         // then
-        winner.getWinnerPosition(racingService.getRacingCars().getCarList());
+        winner.getWinnerCars(racingService.getRacingCars().getCarList());
         // then
         assertEquals(winner.maxPosition,7);
     }
@@ -41,7 +41,6 @@ class WinnerTest {
         racingService.getRacingCars().getCarList().add(d);
         racingService.getRacingCars().getCarList().add(e);
         // when
-        winner.getWinnerPosition(racingService.getRacingCars().getCarList());
         winner.getWinnerCars(racingService.getRacingCars().getCarList());
         // then
         assertEquals(winner.getWinnerCars().get(0),"d");

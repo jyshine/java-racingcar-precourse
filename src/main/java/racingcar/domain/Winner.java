@@ -7,7 +7,7 @@ public class Winner {
     int maxPosition = 0;
     private ArrayList<String> winnerCars = new ArrayList<>();
 
-    public void getWinnerPosition(List<Car> carList) {
+    private void getWinnerPosition(List<Car> carList) {
         for (Car car : carList) {
             if (isMaxPosition(car.getPosition())) {
                 maxPosition = car.getPosition();
@@ -21,6 +21,7 @@ public class Winner {
 
 
     public void getWinnerCars(List<Car> carList) {
+        getWinnerPosition(carList);
         for (Car car : carList) {
             if (isEqualsPosition(car.getPosition())) {
                 winnerCars.add(car.getName());

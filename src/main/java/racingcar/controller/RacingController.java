@@ -24,9 +24,7 @@ public class RacingController {
             racingView.printRacingResult(racingService.getRacingCars());
         }
 
-        winner.getWinnerPosition(racingService.getRacingCars().getCarList());
         winner.getWinnerCars(racingService.getRacingCars().getCarList());
-
         racingView.printOutWinnerCars(winner.getWinnerCars());
     }
 
