@@ -1,5 +1,7 @@
 package racingcar.view;
 
+import static racingcar.util.Constans.CAR_ROUND_RESULT_DELIMITER;
+
 import java.util.ArrayList;
 import racingcar.domain.Car;
 import racingcar.domain.RacingCars;
@@ -16,7 +18,7 @@ public class RacingView {
     private String getPositionDottedLine(int position) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < position; i++) {
-            stringBuilder.append("-");
+            stringBuilder.append(CAR_ROUND_RESULT_DELIMITER);
         }
         return stringBuilder.toString();
     }

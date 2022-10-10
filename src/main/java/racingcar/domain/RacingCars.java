@@ -1,5 +1,10 @@
 package racingcar.domain;
 
+import static racingcar.util.Constans.CAR_FORWARD_CONDITION;
+import static racingcar.util.Constans.CAR_FORWARD_VALUE;
+import static racingcar.util.Constans.CAR_STOP_VALUE;
+import static racingcar.util.Constans.SPLIT_CAR_NAME_DELIMITER;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +13,7 @@ public class RacingCars {
 
 
     public void createCar(String inputValue) {
-        String[] splitInputValue = inputValue.split(",");
+        String[] splitInputValue = inputValue.split(SPLIT_CAR_NAME_DELIMITER);
         for (String splitValue : splitInputValue) {
             carList.add(new Car(splitValue));
         }
@@ -16,17 +21,15 @@ public class RacingCars {
 
 
     public int forward(int randomeValue) {
-        // TODO 하드코딩 변경
-        int count = 0;
+        int count = CAR_STOP_VALUE;
         if (isForward(randomeValue)) {
-            count = 1;
+            count = CAR_FORWARD_VALUE;
         }
         return count;
     }
 
     private boolean isForward(int randomeValue) {
-        // TODO 하드코딩 변경
-        return randomeValue >= 4;
+        return randomeValue >= CAR_FORWARD_CONDITION;
     }
 
     public List<Car> getCarList() {

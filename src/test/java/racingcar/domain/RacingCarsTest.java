@@ -8,9 +8,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import racingcar.util.Validation;
 
 class RacingCarsTest {
     RacingCars racingCars = null;
+    Validation validation = new Validation();
 
     @BeforeEach
     void setUp() {
@@ -33,8 +35,7 @@ class RacingCarsTest {
         // given
         // when
         Throwable thrown = catchThrowable(() -> {
-            RacingCars racingCars2 = new RacingCars();
-            racingCars2.createCar(inputValue);
+            validation.validationCarName(inputValue);
         });
         // then
         assertThat(thrown).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("[ERROR] 경주할 자동차 이름은 5자");
