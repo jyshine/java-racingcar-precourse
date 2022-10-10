@@ -8,10 +8,17 @@ public class RacingService {
     private final RacingCars racingCars = new RacingCars();
     private final RandomNumber randomNumber = new RandomNumber();
 
-    public void roundOne(String inputValue) {
-        racingCars.createCar(inputValue);
+    public void round() {
         for (Car car : racingCars.getCarList()) {
             car.setPosition(racingCars.forward(randomNumber.getNumber()));
+        }
+    }
+
+    public void start(String inputValue) {
+        racingCars.createCar(inputValue);
+        int count = Integer.parseInt(inputValue);
+        for (int i = 0; i < count; i++) {
+            round();
         }
     }
 
