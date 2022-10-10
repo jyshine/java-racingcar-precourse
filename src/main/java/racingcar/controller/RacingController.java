@@ -9,14 +9,10 @@ public class RacingController {
     RacingService racingService = new RacingService();
     RacingView racingView = new RacingView();
     Winner winner = new Winner();
-
     Validation validation = new Validation();
 
-
     public void startRacingGame() {
-        String validName = setRacingCars();
-        racingService.init(validName);
-
+        racingService.init(setRacingCars());
         int inputRound = setRacingRound();
 
         for (int i = 0; i < inputRound; i++) {
