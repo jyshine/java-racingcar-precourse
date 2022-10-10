@@ -32,6 +32,6 @@ public class RacingView {
     }
 
     public void printOutWinnerCars(ArrayList<String> winnerCars) {
-        System.out.println(winnerCars);
+        System.out.println("최종 우승자: "+String.join(", ",winnerCars));
     }
 }
